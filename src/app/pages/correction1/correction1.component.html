@@ -1,0 +1,81 @@
+<div class="container">
+  <!-- Exercice 1 -->
+  <!-- Utiliser la variable title pour afficher : "Le titre du site est Escape" -->
+  <h3>Exercice 1</h3>
+  <p>
+    Le titre du site est : {{ title }}
+  </p>
+
+  <!-- Exercice 2 -->
+  <!-- Utiliser la variable user pour afficher "Je m'appelle Jean Valjean" -->
+  <h3>Exercice 2</h3>
+  <p>
+    Je m'appelle {{ user.firstName }} {{ user.lastName }}
+  </p>
+
+  <!-- Exercice 3 -->
+  <!-- Utiliser la variable website du .ts pour créer un lien qui redirige vers l'url de website
+  avec pour ancre le nom de website -->
+  <h3>Exercice 3</h3>
+  <p>
+    <a [href]="website.url">{{ website.name }}</a>
+  </p>
+
+  <!-- Exercice 4 -->
+  <!-- Lorsqu'on clique sur le bouton suivant afficher une alerte "Bouton cliqué" -->
+  <h3>Exercice 4</h3>
+  <p>
+    <button (click)="clickOnButton4()">Le bouton</button>
+  </p>
+
+  <!-- Exercice 5 -->
+  <!-- Afficher dans la console du navigateur la value de l'input à chaque fois qu'on écrit dans cet input -->
+  <h3>Exercice 5</h3>
+  <p>
+    <input type="text" #input5 (input)="i5Change(input5.value)">
+  </p>
+
+  <!-- Exercice 6 -->
+  <!-- Utiliser les deux boutons de telle sorte que lorsqu'on appui sur l'un il se désactive mais active l'autre
+  et lorsqu'on appuie sur l'autre c'est l'inverse
+  Au début le premier est activé et le deuxième est désactivé -->
+  <h3>Exercice 6</h3>
+  <p>
+    <button [disabled]="button1Disabled" (click)="button1Disabled = !button1Disabled">Bouton 1</button>
+    <button [disabled]="!button1Disabled" (click)="button1Disabled = !button1Disabled">Bouton 2</button>
+  </p>
+
+  <!-- Exercice 7 -->
+  <!-- Créer un champ input et un bouton à côté.
+  Le bouton doit être désactivé lorsque l'input est vide
+  Utiliser ngModel -->
+  <h3>Exercice 7</h3>
+  <p>
+    <input type="text" [(ngModel)]="input7Value"><button [disabled]="!input7Value">OK</button>
+  </p>
+
+  <!-- Exercice 8 -->
+  <!-- En utilisant la variable framework du .ts, afficher une image cliquable qui redirige vers le site d'Angular
+  avec pour balise alt le name du framework -->
+  <h3>Exercice 8</h3>
+  <p>
+    <a [href]="framework.url">
+      <img [src]="framework.logo" [alt]="framework.name">
+    </a>
+  </p>
+
+  <!-- Exercice 9 -->
+  <!-- En utilisant ngModel, afficher dans la console du navigateur le prénom et le nom lors d'un clic sur valider -->
+  <h3>Exercice 9</h3>
+  <div>
+    <div>
+      Prénom :<input type="text" [(ngModel)]="firstName">
+    </div>
+    <div>
+      Nom :<input type="text" [(ngModel)]="lastName">
+    </div>
+    <div>
+      <button (click)="validate9()">Valider</button>
+    </div>
+  </div>
+</div>

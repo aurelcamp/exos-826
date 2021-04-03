@@ -1,0 +1,90 @@
+<div class="container">
+  <!-- Exercice 1 -->
+  <!-- Faire en sorte que la div en dessous soit visible -->
+  <h3>Exercice 1</h3>
+  <div *ngIf="showDiv1 === 3">
+    Montrez moi
+  </div>
+  <!-- On va mettre la valeur de showDiv1 à 3 dans le .ts -->
+
+  <!-- Exercice 2 -->
+  <!-- Faire apparaitre et disparaitre la div lorsqu'on appuie sur le bouton -->
+  <h3>Exercice 2</h3>
+  <div>
+    <div *ngIf="showDiv2">
+      Div à faire apparaitre et disparaitre
+    </div>
+    <button (click)="showDiv2 = !showDiv2">Bouton</button>
+  </div>
+
+  <!-- Exercice 3 Difficile -->
+  <h3>Exercice 3</h3>
+  <!-- En utilisant la classe .div3 du .scss, changer la couleur de fond de la div lors du passage de la souris.
+  Lorsque la souris sort de la div le fond redevient blanc -->
+  <div [ngClass]="{'div3': div3Hover}" (mouseenter)="div3Hover = true" (mouseleave)="div3Hover = false">
+    La couleur du fond de la div change au passage de la souris
+  </div>
+
+  <!-- Exercice 4 -->
+  <!-- En utilisant *ngFor et la variable cities du .ts, afficher une liste comportant les 4 villes -->
+  <h3>Exercice 4</h3>
+  <div>
+    <ul>
+      <li *ngFor="let city of cities">
+        {{ city }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Exercice 5 -->
+  <!-- En utilisant *ngFor et la variable cities du .ts, afficher les 4 villes dans une table -->
+  <h3>Exercice 5</h3>
+  <div>
+    <table>
+      <tr *ngFor="let city of cities">
+        <td>{{ city }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Exercice 6 -->
+  <!-- En utilisant la variable animals du .ts, afficher le nom des différents animaux dans une liste.
+  Lorsque c'est animaux peuvent voler, ajouter à côté de leur nom l'image wings.png présente dans assets/images -->
+  <h3>Exercice 6</h3>
+  <div>
+    <ul>
+      <li *ngFor="let animal of animals">
+        {{ animal.name }}
+        <img *ngIf="animal.canFly" src="./assets/images/wings.png">
+      </li>
+    </ul>
+  </div>
+
+  <!-- Exercice 7 -->
+  <h3>Exercice 7</h3>
+  <!-- En utilisant la variable movies du .ts, afficher tous les films dans des card bootstrap en utilisant
+  le modèle ci-dessous et en remplaçant par propriétés de chaque film
+  Ne pas se soucier de l'affichage si les cards apparaissent les unes en dessous des autres -->
+
+  <!-- Si la note est inférieure à 4 changer le fond de la carte en gris : utiliser la classe .grey du scss -->
+  <div class="card" style="width: 18rem;" *ngFor="let movie of movies" [ngClass]="{'grey' : movie.rating <= 4}">
+    <img class="card-img-top" [src]="movie.imageUrl" [alt]="movie.title">
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.title }}</h5>
+      <h6>De {{ movie.director }}</h6>
+      <div class="text-danger" *ngIf="!movie.isForAll">
+        <!-- Afficher cette div uniquement si pas pour tout public -->
+        Attention ce film n'est pas tout public
+      </div>
+      <p class="card-text">
+        Avec : 
+        <span *ngFor="let actor of movie.actors">
+          {{ actor }},
+        </span>
+      </p>
+      
+      <a [href]="movie.link" class="btn btn-primary">Vers le film</a>
+    </div>
+  </div>
+</div>
+

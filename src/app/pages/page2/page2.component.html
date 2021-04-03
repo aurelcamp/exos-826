@@ -1,0 +1,73 @@
+<div class="container">
+  <!-- Exercice 1 -->
+  <!-- Faire en sorte que la div en dessous soit visible -->
+  <h3>Exercice 1</h3>
+  <div *ngIf="showDiv1 === 3">
+    Montrez moi
+  </div>
+
+  <!-- Exercice 2 -->
+  <!-- Faire apparaitre et disparaitre la div lorsqu'on appuie sur le bouton -->
+  <h3>Exercice 2</h3>
+  <div>
+    <div>
+      Div à faire apparaitre et disparaitre
+    </div>
+    <button>Bouton</button>
+  </div>
+
+  <!-- Exercice 3 Difficile -->
+  <h3>Exercice 3</h3>
+  <!-- En utilisant la classe .div3 du .scss, changer la couleur de fond de la div lors du passage de la souris.
+  Lorsque la souris sort de la div le fond redevient blanc -->
+  <div>
+    La couleur du fond de la div change au passage de la souris
+  </div>
+
+  <!-- Exercice 4 -->
+  <!-- En utilisant *ngFor et la variable cities du .ts, afficher une liste comportant les 4 villes -->
+  <h3>Exercice 4</h3>
+  <div>
+
+  </div>
+
+  <!-- Exercice 5 -->
+  <!-- En utilisant *ngFor et la variable cities du .ts, afficher les 4 villes dans une table -->
+  <h3>Exercice 5</h3>
+  <div>
+
+  </div>
+
+  <!-- Exercice 6 -->
+  <!-- En utilisant la variable animals du .ts, afficher le nom des différents animaux dans une liste.
+  Lorsque c'est animaux peuvent voler, ajouter à côté de leur nom l'image wings.png présente dans assets/images -->
+  <h3>Exercice 6</h3>
+  <div>
+    
+  </div>
+
+  <!-- Exercice 7 -->
+  <h3>Exercice 7</h3>
+  <!-- En utilisant la variable movies du .ts, afficher tous les films dans des card bootstrap en utilisant
+  le modèle ci-dessous et en remplaçant par propriétés de chaque film
+  Ne pas se soucier de l'affichage si les cards apparaissent les unes en dessous des autres -->
+
+  <!-- Si la note est inférieure à 4 changer le fond de la carte en gris : utiliser la classe .grey du scss -->
+  <div class="card" style="width: 40%;">
+    <img class="card-img-top" src="l_imageUrl_du_film" alt="le_title_du_film">
+    <div class="card-body">
+      <h5 class="card-title">le_title_du_film</h5>
+      <h6>De : le_director_du_film</h6>
+      <div class="text-danger">
+        <!-- Afficher cette div uniquement si le film n'est pas pour tout public -->
+        Attention ce film n'est pas tout public
+      </div>
+      <p class="card-text">
+        Avec : 
+        la_liste_des_actors
+      </p>
+      
+      <a href="le_link_du_film" class="btn btn-primary">Vers le film</a>
+    </div>
+  </div>
+</div>
